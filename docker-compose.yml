@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+    api:
+        environment:
+          - ASPNETCORE_HTTPS_PORT=5001
+          - ASPNETCORE_URLS=http://+:5000
+        build:
+          context: ./CafeteriaAPI
+          dockerfile: Dockerfile
+        ports:
+          - "5000:5000"
+        depends_on:
+          - db
+
+    db:
+        image: postgres:14.1-alpine
+        restart: always
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+        ports:
+          - '5432:5432'
+        volumes: 
+          - db:/var/lib/postgresql/data
+
+    web:
+        build:
+          context: ./Cafeteria
+          dockerfile: Dockerfile
+        ports:
+          - "3000:3000"
+        depends_on:
+          - api
+        volumes:
+          - ./cafeteria:/usr/src/app/cafeteria
+          - /usr/src/app/cafeteria/node_modules
+
+volumes:
+    db:
+      driver: local
