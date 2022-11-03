@@ -45,7 +45,7 @@ namespace CafeteriaAPI.Controllers
         }
 
         [HttpGet]
-        [Route("products")]
+        [Route("Products")]
         public async Task<IActionResult> GetAllProducts()
         {
             if (!ModelState.IsValid) return BadRequest();
