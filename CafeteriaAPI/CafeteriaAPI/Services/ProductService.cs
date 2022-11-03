@@ -63,8 +63,13 @@ namespace CafeteriaAPI.Services
 
                 product.Stock -= productOrder.Quantity;
                 total = productOrder.Quantity * product.Price;
-            }            
-            
+            }
+
+            if (total > sale.MoneyPaid)
+            {
+                throw new Exception("Not enough money paid");
+            }
+
             //save changes
             await _context.SaveChangesAsync();
 
