@@ -1,0 +1,2 @@
+# Update Cafeteria database migrations to the latest version
+dotnet ef database update --project .\CafeteriaAPI\CafeteriaAPI\CafeteriaAPI.csproj --startup-project .\CafeteriaAPI\CafeteriaAPI\CafeteriaAPI.csproj 

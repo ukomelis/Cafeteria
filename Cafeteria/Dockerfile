@@ -1,9 +1,13 @@
-FROM node:14
+FROM node:16
 
-WORKDIR /usr/src/app/cafeteria
+WORKDIR /src/app/
 
-RUN npm install
+RUN npm install -g react-scripts
+
+RUN chown -Rh node:node /src/app
+
+USER node
 
 EXPOSE 4200
 
-CMD ["npm", "start"]
+CMD [ "sh", "-c", "npm install && npm run start" ]

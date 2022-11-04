@@ -26,15 +26,14 @@ services:
 
     web:
         build:
-          context: ./Cafeteria
+          context: ./cafeteria
           dockerfile: Dockerfile
         ports:
           - "4200:4200"
         depends_on:
           - api
         volumes:
-          - ./cafeteria:/usr/src/app/cafeteria
-          - /usr/src/app/cafeteria/node_modules
+          - ./cafeteria/:/src/app/
 
 volumes:
     db:
