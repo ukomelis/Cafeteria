@@ -8,6 +8,7 @@ Cafeteria is a application that helps selling products at home cafeteria events,
 * React
 * PostgreSQL
 * docker / docker-compose
+* NPM 8.19.3
 
 ## Installation
 
@@ -28,7 +29,7 @@ docker-compose up
 ```
 
 ### Known issues
-* Website fails to load when hosted from the container
+* Slow Website container startup
 
 
 ## Usage

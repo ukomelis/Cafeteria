@@ -29,7 +29,7 @@ services:
           context: ./cafeteria
           dockerfile: Dockerfile
         ports:
-          - "4200:4200"
+          - "3000:3000"
         depends_on:
           - api
         volumes:

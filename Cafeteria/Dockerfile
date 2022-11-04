@@ -8,6 +8,6 @@ RUN chown -Rh node:node /src/app
 
 USER node
 
-EXPOSE 4200
+EXPOSE 3000
 
 CMD [ "sh", "-c", "npm install && npm run start" ]
