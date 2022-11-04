@@ -2,6 +2,13 @@
 
 Cafeteria is a application that helps selling products at home cafeteria events, fares, etc.
 
+## TODO:
+
+[ ] - Proper assertion in tests
+[ ] - Product stock insertion
+[ ] - Product cart functionality
+[ ] - Checkout
+
 ## Built with
 
 * .NET 6
