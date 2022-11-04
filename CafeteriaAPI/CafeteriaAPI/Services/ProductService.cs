@@ -8,10 +8,12 @@ namespace CafeteriaAPI.Services
     public class ProductService : IProductService
     {
         private readonly CafeteriaContext _context;
+        private readonly ICashierService _cashierService;
 
-        public ProductService(CafeteriaContext context)
+        public ProductService(CafeteriaContext context, ICashierService cashierService)
         {
             _context = context;
+            _cashierService = cashierService;
         }
 
         public async Task<Product> EditProductStock(EditProductStockRequest request)
@@ -42,7 +44,7 @@ namespace CafeteriaAPI.Services
             return await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<decimal> SellProductsAndGetTotalPrice(Sale sale)
+        public async Task<Invoice> SellProducts(Sale sale)
         {
             var total = 0m;
 
@@ -70,10 +72,12 @@ namespace CafeteriaAPI.Services
                 throw new Exception("Not enough money paid");
             }
 
+            var invoice = _cashierService.CreateInvoice(sale, total);
+
             //save changes
             await _context.SaveChangesAsync();
 
-            return total;
+            return invoice;
         }
     }
 }

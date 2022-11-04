@@ -5,6 +5,7 @@ Cafeteria is a application that helps selling products at home cafeteria events,
 ## Built with
 
 * .NET 6
+* Entity Framework Core
 * React
 * PostgreSQL
 * docker / docker-compose
