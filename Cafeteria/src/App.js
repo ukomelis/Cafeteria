@@ -1,31 +1,24 @@
-import React, { useState, useEffect  } from 'react';
-import './App.css';
-import ProductsContainer from './components/Products/ProductsContainer';
-import axios from 'axios';
+import React from 'react';
+import { Navigate, useRoutes } from 'react-router-dom';
+import Context from './components/Context/Context';
+import Header from './components/Header/Header';
+import Products from './components/Products/Products';
+import Basket from './components/Basket/Basket';
 
 function App() {
-  const [products, setProducts] = useState();
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const headers = {
-          'Content-Type': 'application/json'
-      };
-
-      const response = await axios.get('http://localhost:5000/api/Product/products', { headers: headers });
-      setProducts(response.data)
-      setLoading(false);
-    }
-    fetchData()
-  }, [])
+  let routes = useRoutes([
+    { path: '/', element: <Products /> },
+    { path: '/basket', element: <Basket /> },
+    { path: '*', element: <Navigate to={'/'} /> },
+  ]);
 
 
   return (
     <div className="App">
-      <ProductsContainer products={products} isLoading={isLoading}>
-        
-      </ProductsContainer>
+    <Context>
+        <Header />
+        {routes}
+    </Context>
     </div>
   );
 }
