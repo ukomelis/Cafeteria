@@ -4,16 +4,17 @@ Cafeteria is a application that helps selling products at home cafeteria events,
 
 ## TODO
 
-- [ ] - Proper assertion in tests
-- [ ] - Product stock insertion
-- [ ] - Product cart functionality
 - [ ] - Checkout
+- [ ] - Product stock insertion
+- [ ] - CSS Improvements
+- [ ] - Proper assertion in tests
 
 ## Built with
 
 * .NET 6
 * Entity Framework Core
 * React
+* Context API
 * PostgreSQL
 * docker / docker-compose
 * NPM 8.19.3

@@ -12,7 +12,7 @@ const sumPrice = (items) => {
 const intialState = {
     allProducts: [],
     basket: [],
-    totalPrices: 0
+    totalPrice: 0
 };
 
 const reduce = (state, action) => {
