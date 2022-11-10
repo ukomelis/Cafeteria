@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useGetProducts = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch("http://localhost:5000/api/Product/Products");
-        const data = await response.json();
+    setIsLoading(true);
+    fetch("http://localhost:5000/api/Product/Products ")
+      .then((res) => res.json())
+      .then((data) => {
         setData(data);
-      } catch (error) {
-        setError(error);
-      } finally {
         setIsLoading(false);
-      }
-    };
-    fetchData();
+        console.log(data)
+      });
   }, []);
-
-  return { data, isLoading, error };
+  
+  return { data, isLoading };
 }
 
 export default useGetProducts;

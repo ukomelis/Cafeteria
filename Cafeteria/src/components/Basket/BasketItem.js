@@ -7,7 +7,7 @@ export default function BasketItem(props) {
           <img src={"./images/" + props.id + ".jpg"} alt="basket_item" />
         </div>
         <div className="basket_content">
-          <span className="basket_title">{props.title}</span>
+          <span className="basket_title">{props.name}</span>
           <span className="basket_count">Count: {props.count}</span>
           <span>{(props.price * props.count)}€</span>
         </div>

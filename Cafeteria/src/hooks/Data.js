@@ -1,75 +1,66 @@
 let allProducts = [
     {
       "id": 1,
-      "title": "Brownie",
+      "name": "Brownie",
       "stock": 48,
       "price": 0.65,
-      "productTypeId": 0,
-      "count": 1
+      "productTypeId": 0
     },
     {
       "id": 2,
-      "title": "Muffin",
+      "name": "Muffin",
       "stock": 36,
       "price": 1,
-      "productTypeId": 0,
-      "count": 1
+      "productTypeId": 0
     },
     {
       "id": 3,
-      "title": "Cake Pop",
+      "name": "Cake Pop",
       "stock": 24,
       "price": 1.35,
-      "productTypeId": 0,
-      "count": 1
+      "productTypeId": 0
     },
     {
       "id": 4,
-      "title": "Apple tart",
+      "name": "Apple tart",
       "stock": 60,
       "price": 1.5,
-      "productTypeId": 0,
-      "count": 1
+      "productTypeId": 0
     },
     {
       "id": 5,
-      "title": "Water",
+      "name": "Water",
       "stock": 30,
       "price": 1.5,
-      "productTypeId": 0,
-      "count": 1
+      "productTypeId": 0
     },
     {
       "id": 6,
-      "title": "Shirt",
+      "name": "Shirt",
       "stock": 0,
       "price": 2,
-      "productTypeId": 1,
-      "count": 1
+      "productTypeId": 1
     },
     {
       "id": 7,
-      "title": "Pants",
+      "name": "Pants",
       "stock": 0,
       "price": 3,
-      "productTypeId": 1,
-      "count": 1
+      "productTypeId": 1
     },
     {
       "id": 8,
-      "title": "Jacket",
+      "name": "Jacket",
       "stock": 0,
       "price": 4,
-      "productTypeId": 1,
-      "count": 1
+      "productTypeId": 1
     },
     {
       "id": 9,
-      "title": "Toy",
+      "name": "Toy",
       "stock": 0,
       "price": 1,
-      "productTypeId": 1,
-      "count": 1
+      "productTypeId": 1
     }
   ]
 

@@ -33,8 +33,7 @@ function Basket() {
                 <button
                   onClick={() => dispatch({ type: "EMPTY_BASKET" })}
                   className="basket_button_remove">
-
-                  Delete {state.basket.length} item(s)  
+                  Delete all items 
                 </button>
               </div>
             </div>
