@@ -18,6 +18,7 @@ Cafeteria is a application that helps selling products at home cafeteria events,
 * PostgreSQL
 * docker / docker-compose
 * NPM 8.19.3
+* Node 14.15.3
 
 ## Installation
 
