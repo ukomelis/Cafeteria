@@ -1,8 +1,5 @@
 ﻿using CafeteriaAPI.Models.Enums;
 using CafeteriaAPI.Models.Requests;
-using CafeteriaAPI.Postgre;
-using CafeteriaAPI.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -24,8 +21,6 @@ namespace CafeteriaAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProduct(int id)
         {
-            if (!ModelState.IsValid) return BadRequest();
-
             try
             {
                 var product = await _productService.GetProduct(id);
@@ -48,8 +43,6 @@ namespace CafeteriaAPI.Controllers
         [Route("Products")]
         public async Task<IActionResult> GetAllProducts()
         {
-            if (!ModelState.IsValid) return BadRequest();
-
             try
             {
                 var products = await _productService.GetAllProducts();
