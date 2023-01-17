@@ -1,5 +1,4 @@
-﻿using CafeteriaAPI.Models.Enums;
-using CafeteriaAPI.Models.Requests;
+﻿using CafeteriaAPI.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -48,7 +47,6 @@ namespace CafeteriaAPI.Controllers
                 var products = await _productService.GetAllProducts();
 
                 if (products == null)
-
                 {
                     return NotFound();
                 }
@@ -65,7 +63,10 @@ namespace CafeteriaAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> EditProduct([FromBody] EditProductStockRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
             
             try
             {                

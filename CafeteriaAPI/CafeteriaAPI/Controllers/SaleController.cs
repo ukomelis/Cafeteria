@@ -20,7 +20,10 @@ namespace CafeteriaAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateSale([FromBody] CreateSaleRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
             try
             {
